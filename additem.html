@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+
+		<!--Meta data -->
+		<meta charset="utf-8" />
+		<meta name="keywords" content="time, manage, management, to-do, list" />
+		<meta name="description" content="Manage your time better" />
+		<meta name="author" content="Andrew Helmkamp" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/styles.css">
+		<!--Page Title-->
+		<title>Add Item</title>
+
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<h1 id="head">Add a New Item</h1>
+				<a href="index.html" id="home" class="links">Home</a>
+				<a href="#" id="display" class="links">Display Data</a>
+				<a href="#" id="add" style="display:none" class="links">New Item</a>
+				<a href="#" id="clear">Clear All</a>
+			</div>
+			
+			<div id="content">
+				<div id="searchContainer">
+					<form action="javascript:void;" method="post" id="searchForm" style="display: none;">
+						<label for="category">Catagory</label> 
+						<select name="category" id="searchCategory">
+							<option value="Work">Work</option>
+							<option value="School" selected="selected">School</option>
+							<option value="Personal">Personal</option>
+						</select><br />
+						<input type="text" id="searchWord" name="search" value="" placeholder="search for a task"/> <br/> 
+						<input type="button" value="Search" id="searchBtn" /> <input type="button" value="Clear Results" id="clearSearchBtn" />
+					</form>
+				</div>
+				<div id="form">
+					<form action="#" method="post" id="todoForm">
+						<fieldset>
+							<legend>Item Information</legend>
+							<ul id="errors"></ul>
+							<label for="start">Start Date</label>
+							<input type="date" placeholder="MM/DD/YY" id="start" /> <br />
+							<label for="end">Finish Date</label>
+							<input type="date" placeholder="MM/DD/YY" id="end" required /> <br />
+							<label for="itemName">Item Name</label> <input type="text" name="itemName" placeholder="Homework" id="itemName" required /> <br />
+							<label for="category">Catagory</label> 
+							<select name="category" id="category">
+								<option value="Work">Work</option>
+								<option value="School" selected="selected">School</option>
+								<option value="Personal">Personal</option>
+							</select> <br />
+							<label for="priority">Priority</label>
+							<input type="range" name="priority" min="1" max="3" value="1" id="priority" />
+							<span id="priorityNum">1</span>
+							<br />
+							<input type="checkbox" name="highlight" value="Yes" id="highlight" />
+							<label for="highlight">Highlighted</label>
+							<br />
+							<label for="comments">Comments:</label><br /> <textarea rows="3" cols="30" placeholder="Add any additional information." id="comments"></textarea>
+							<input type="hidden" value="true" />
+						</fieldset>
+						<input type="button" value="Add Item" id="submit" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="./js/json.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+	</body>
+</html>

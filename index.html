@@ -1,0 +1,164 @@
+<!doctype html>
+<!--
+-Andrew Helmkamp 
+-Project 1
+-MiU 1302
+-->
+<html>
+	<head>
+
+		<!--Meta data -->
+		<meta charset="utf-8" />
+		<meta name="keywords" content="time, manage, management, to do, list" />
+		<meta name="description" content="Manage your time better" />
+		<meta name="author" content="Andrew Helmkamp" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--Custom jQM CSS-->
+		<link rel="stylesheet" href="./css/themes/green.min.css" />
+		<!--jQM CDN-->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script>
+			$.ajaxSetup ({
+			// Disable caching of AJAX responses
+			cache: false
+			});
+		</script>
+		<!--Local CSS-->
+		<link rel="stylesheet" type="text/css" href="./css/styles.css">
+		<!--Page Title-->
+		<title>Time Manager</title>
+
+	</head>
+
+	<body>
+		<!--Home Page-->
+		<div class="wrap" data-theme="d" data-role="page" id="homePage">
+		    <div data-role="header">
+				<h1>Time Manager</h1>
+			</div>
+			<div data-role="content">
+				<a href="additem.html" id="mainAdd" data-ajax="false"><img src="./img/feature.png"></a>
+				<div data-role="fieldcontain">
+					<!--<label>Search for a Task</label>-->
+					<input type="search" id="search" name="search" value="" placeholder="search for a task"/>
+				</div>	
+				<ul data-role="listview" data-inset="true">
+					<li data-role="list-divider" class="ui-bar-d">
+						Browse by...
+					</li>
+					<li><a href="#fourOfour">Start Date</a></li>
+					<li><a href="#fourOfour">End Date</a></li>
+					<li>Category
+						<ul>
+							<li><a href="#browse-by?category=Work">Work</a></li>
+							<li><a href="#browse-by?category=School">School</a></li>
+							<li><a href="#browse-by?category=Personal">Personal</a></li>
+							<li data-icon="back"><a href="#homePage">Back</a></li>
+						</ul>
+					</li>
+					<li><a href="#fourOfour">Priority</a></li>
+					<li><a href="#fourOfour">Highlighted</a></li>
+				</ul>
+			</div>
+			<div id="footer" data-role="footer" data-position="fixed" data-id="home">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#homePage" data-icon="home" data-theme="c" class="ui-btn-active ui-state-persist">Home</a></li>
+						<li><a href="#infoPage" data-icon="info" data-theme="c" id="infoPage">Info</a></li>
+						<li><a href="#newsstream" data-icon="star" data-theme="c" id="newsstream">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+<!--Info Page-->
+		<div class="wrap" data-role="page" data-theme="d" id="infoPage">
+			<div data-role="header">
+				<h1>Information</h1>
+			</div>
+			<div data-role="content">
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-inset="true">
+						<h2>Credits</h2>
+							<p>Calander image by <a href="http://www.IconDrawer.com">Eugen Buzuk</a></p>
+						</ul>
+					</div>
+					<div data-role="collapsible">
+						<h2>App Creator</h2>
+							<p>Created by <a href="404.html" rel="external">Andrew Helmkamp</a></p>
+					</div>
+				</div>
+				<ul data-role="listview" data-inset="true">
+					<li><a href="404.html" rel="external">Gold App</a></li>
+					<li><a href="404.html" rel="external">Gold gh-pages</a></li>
+					<li><a href="404.html" rel="external">Bronze gh-page</a></li>
+					<li><a href="https://github.com/helmkamp/MiU" rel="external">GitHub Repository</a></li>
+				</ul>
+				
+				<div id="footer" data-role="footer" data-position="fixed" data-id="home">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#homePage" data-icon="home" data-theme="c">Home</a></li>
+							<li><a href="#infoPage" data-icon="info" data-theme="c" class="ui-btn-active ui-state-persist" id="infoPage">Info</a></li>
+							<li><a href="#newsstream" data-icon="star" data-theme="c" id="newsstream">News</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--Newsstream-->
+		<div class="wrap" data-role="page" data-theme="d" id="newsstream">
+			<div data-role="header">
+				<h1>Newsstream</h1>
+			</div>
+			<div data-role="content" id="newsContent">
+				
+				
+				<div id="footer" data-role="footer" data-position="fixed" data-id="home">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#homePage" data-icon="home" data-theme="c" >Home</a></li>
+							<li><a href="#infoPage" data-icon="info" data-theme="c" id="infoPage">Info</a></li>
+							<li><a href="#newsstream" data-icon="star" data-theme="c" class="ui-btn-active ui-state-persist" id="newsstream">News</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--Category-->
+		<div class="wrap" data-role="page" data-theme="d" id="browse-by" data-add-back-btn="true">
+			<div data-role="header">
+				<h1></h1>
+			</div>
+			<div data-role="content" id="newsContent">
+				
+				
+				<div id="footer" data-role="footer" data-position="fixed" data-id="home">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#homePage" data-icon="home" >Home</a></li>
+							<li><a href="#infoPage" data-icon="info" id="infoPage">Info</a></li>
+							<li><a href="#newsstream" data-icon="star" class="ui-btn-active ui-state-persist" id="newsstream">News</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--404 Error Page-->
+		<div class="wrap" data-theme="d" data-role="page" id="fourOfour" data-add-back-btn="true">
+		    <div data-role="header">
+				<h1>404 Error</h1>
+			</div>
+			<div data-role="content">
+				<p>Sorry! The page you are looking for was not found.</p>
+			</div>
+		</div>
+
+		<script src="./js/browseByCategory.js"></script>
+	</body>
+</html>

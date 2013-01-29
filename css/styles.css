@@ -1,0 +1,83 @@
+* {
+	/*Get rid of the highlight when you tap a link*/
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	font-family: sans-serif;
+	font-size: 14px;
+	color: white;
+	background: -webkit-linear-gradient(top, #444, #222);
+	text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 1px /*{a-body-shadow-radius}*/ #111 /*{a-body-shadow-color}*/;
+}
+
+.links {
+	border-right: solid 1px #000;
+	padding-right: .3em;
+}
+
+#searchContainer {
+	margin: auto;
+}
+
+#errors {
+		color: red;
+		font-weight: bold;
+}
+
+.editLinks {
+	padding-top: .5em;
+	padding-right: 2em;
+	background-color: transparent;
+}
+
+a, :visited {
+	color: #2489ce;
+	font-weight: bold;
+	outline: 0;
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+	margin: 1.3em 0;
+	padding: 0;
+}
+
+form {
+	width: 20em;
+	margin: auto;
+}
+
+/*Intro text on index page*/
+p {
+	text-align: center;
+}
+
+
+#highlightGreen {
+	color: black;
+	text-shadow: 0 0 0 #444;
+	background-color: green;
+	width: 21em;
+}
+
+#highlightYellow {
+	color: black;
+	text-shadow: 0 0 0 #444;
+	background-color: yellow;
+	width: 21em;
+}
+
+#highlightRed {
+	color: black;
+	text-shadow: 0 0 0 #444;
+	background-color: red;
+	width: 21em;
+}
+
+#pic {
+	float: right;
+	padding-right: 3px;
+	padding-top: 3px;
+}
