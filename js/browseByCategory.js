@@ -33,14 +33,16 @@ function showCategory(urlObj, options) {
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);
-			
+			console.log(value);
 			// Generate a list item for each item in the category
 			// and add it to our markup.
-			for(var j in obj) {
-				console.log(obj.itemName[1]);
-				if(categoryName === obj.category[1]) {
-					markup += "<li>" + obj.itemName[1] + "</li>";
-				}
+			if(categoryName === obj.category[1]) {
+				markup += "<li><h1>" + obj.itemName[1] + "</h1>";
+				markup += "<p>" + obj.startDate[0] + " " + obj.startDate[1] + "</p>";
+				markup += "<p>" + obj.endDate[0] + " " + obj.endDate[1] + "</p>";
+				markup += "<p>" + obj.priority[0] + " " + obj.priority[1] + "</p>";
+				markup += "<p>" + obj.comments[0] + " " + obj.comments[1] + "</p>";
+				markup += "</li>";
 			}
 		}
 

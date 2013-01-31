@@ -469,17 +469,17 @@
 -----------------------------------------------------------------------------------------------------------*/
 
 .ui-bar-d {
-	border: 1px solid #232323 /*{d-bar-border}*/;
+	border: 1px solid #4d8c39 /*{d-bar-border}*/;
 	background: #4d8c39 /*{d-bar-background-color}*/;
 	color: #232323 /*{d-bar-color}*/;
 	font-weight: bold;
 	text-shadow: 0 /*{d-bar-shadow-x}*/ 1px /*{d-bar-shadow-y}*/ 1px /*{d-bar-shadow-radius}*/ #e3eadc /*{d-bar-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #4d8c39 /*{d-bar-background-start}*/), to( #4d8c39 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #4d8c39 /*{d-bar-background-start}*/, #4d8c39 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #4d8c39 /*{d-bar-background-start}*/, #4d8c39 /*{d-bar-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #4d8c39 /*{d-bar-background-start}*/, #4d8c39 /*{d-bar-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #4d8c39 /*{d-bar-background-start}*/, #4d8c39 /*{d-bar-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #4d8c39 /*{d-bar-background-start}*/, #4d8c39 /*{d-bar-background-end}*/);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #4a8737 /*{d-bar-background-start}*/), to( #4f903a /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #4a8737 /*{d-bar-background-start}*/, #4f903a /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #4a8737 /*{d-bar-background-start}*/, #4f903a /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #4a8737 /*{d-bar-background-start}*/, #4f903a /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #4a8737 /*{d-bar-background-start}*/, #4f903a /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #4a8737 /*{d-bar-background-start}*/, #4f903a /*{d-bar-background-end}*/);
 }
 .ui-bar-d .ui-link-inherit {
 	color: #232323 /*{d-bar-color}*/;
@@ -511,7 +511,7 @@
 }
 .ui-body-d,
 .ui-overlay-d {
-	border: 1px solid #e3eadc /*{d-body-border}*/;
+	border: 1px solid #4d4d4d /*{d-body-border}*/;
 	color: #ffffff /*{d-body-color}*/;
 	text-shadow: 0 /*{d-body-shadow-x}*/ 0px /*{d-body-shadow-y}*/ 0 /*{d-body-shadow-radius}*/ #ffffff /*{d-body-shadow-color}*/;
 	background: #232323 /*{d-body-background-color}*/;
@@ -555,7 +555,7 @@
 }
 
 .ui-btn-up-d {
-	border: 1px solid #232323 /*{d-bup-border}*/;
+	border: 1px solid #4d4d4d /*{d-bup-border}*/;
 	background: #232323 /*{d-bup-background-color}*/;
 	font-weight: bold;
 	color: #4d8c39 /*{d-bup-color}*/;
