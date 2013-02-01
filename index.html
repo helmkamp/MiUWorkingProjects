@@ -52,8 +52,15 @@
 							<li data-icon="back"><a href="#homePage">Back</a></li>
 						</ul>
 					</li>
-					<li><a href="#fourOfour">Priority</a></li>
-					<li><a href="#fourOfour">Highlighted</a></li>
+					<li><a href="#browse-by?category=Priority">Priority</a></li>
+					<li>Highlighted
+						<ul>
+							<li><a href="#browse-by?category=Highlighted Green">Green</a></li>
+							<li><a href="#browse-by?category=Highlighted Yellow">Yellow</a></li>
+							<li><a href="#browse-by?category=Highlighted Red">Red</a></li>
+							<li data-icon="back"><a href="#homePage">Back</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<div id="footer" data-role="footer" data-position="fixed" data-id="home">
@@ -67,7 +74,7 @@
 			</div>
 		</div>
 		
-<!--Info Page-->
+		<!--Info Page-->
 		<div class="wrap" data-role="page" data-theme="d" id="infoPage">
 			<div data-role="header">
 				<h1>Information</h1>
@@ -76,7 +83,7 @@
 				<div data-role="collapsible-set">
 					<div data-role="collapsible" data-inset="true">
 						<h2>Credits</h2>
-							<p>Calander image by <a href="http://www.IconDrawer.com">Eugen Buzuk</a></p>
+							<p>ToDo image by <a href="http://mattrich.deviantart.com">Mattrich</a></p>
 						</ul>
 					</div>
 					<div data-role="collapsible">
@@ -85,10 +92,10 @@
 					</div>
 				</div>
 				<ul data-role="listview" data-inset="true">
-					<li><a href="404.html" rel="external">Gold App</a></li>
-					<li><a href="404.html" rel="external">Gold gh-pages</a></li>
-					<li><a href="404.html" rel="external">Bronze gh-page</a></li>
-					<li><a href="https://github.com/helmkamp/MiU" rel="external">GitHub Repository</a></li>
+					<li><a href="404.html" data-ajax="false" rel="external">Gold App</a></li>
+					<li><a href="404.html" data-ajax="false" rel="external">Gold gh-pages</a></li>
+					<li><a href="404.html" data-ajax="false" rel="external">Bronze gh-page</a></li>
+					<li><a href="https://github.com/helmkamp/MiUTwo" data-ajax="false" rel="external">GitHub Repository</a></li>
 				</ul>
 				
 				<div id="footer" data-role="footer" data-position="fixed" data-id="home">
@@ -154,5 +161,6 @@
 		</div>
 
 		<script src="./js/browseByCategory.js"></script>
+		<!-- <script src="./js/sortTest.js"></script> -->
 	</body>
 </html>

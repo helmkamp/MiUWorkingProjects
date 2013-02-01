@@ -10,7 +10,7 @@ function showCategory(urlObj, options) {
 		// the DOM. The id of the page we are going to write our
 		// content into is specified in the hash before the '?'.
 		pageSelector = urlObj.hash.replace(/\?.*$/, "");
-	
+
 	if(localStorage) {
 		// Get the page we are going to dump our content into.
 		var $page = $(pageSelector),
@@ -24,31 +24,98 @@ function showCategory(urlObj, options) {
 			// The markup we are going to inject into the content
 			// area of the page.
 			markup = "<ul id='categoryView' data-role='listview' data-inset='true' data-filter='true'>";
-		
-		// The number of items in the category.
-		var numItems = localStorage.length;
 
-		// The object of items for this category.
-		for(var i = 0; i < numItems; i++) {
-			var key = localStorage.key(i);
-			var value = localStorage.getItem(key);
-			var obj = JSON.parse(value);
-			console.log(value);
-			// Generate a list item for each item in the category
-			// and add it to our markup.
-			if(categoryName === obj.category[1]) {
-				markup += "<li><h1>" + obj.itemName[1] + "</h1>";
-				markup += "<p>" + obj.startDate[0] + " " + obj.startDate[1] + "</p>";
-				markup += "<p>" + obj.endDate[0] + " " + obj.endDate[1] + "</p>";
-				markup += "<p>" + obj.priority[0] + " " + obj.priority[1] + "</p>";
-				markup += "<p>" + obj.comments[0] + " " + obj.comments[1] + "</p>";
+		// The number of items in the category.
+		var numItems = localStorage.length,
+			key, value, obj;
+
+		if(categoryName === "Priority") {
+			var objArray = []; // Create an empty array for the objects in localStorage to go in
+			// numItemsLS = localStorage.length;
+			// Take each object from localStorage and push it into an array
+			for(var k = 0; k < numItems; k++) {
+				key = localStorage.key(k);
+				value = localStorage.getItem(key);
+				obj = $.parseJSON(value);
+				objArray.push(obj);
+			}
+
+			// Sort the items by priority from 1 to 3
+			objArray.sort(function(a, b) {
+				return a.priority[1] - b.priority[1];
+			});
+
+			var numItemsOA = objArray.length;
+			for(var i = 0; i < numItemsOA; i++) {
+				markup += "<li><h1>" + objArray[i].itemName[1] + "</h1>";
+				markup += "<p>" + objArray[i].startDate[0] + " " + objArray[i].startDate[1] + "</p>";
+				markup += "<p>" + objArray[i].endDate[0] + " " + objArray[i].endDate[1] + "</p>";
+				markup += "<p>" + objArray[i].category[0] + " " + objArray[i].category[1] + "</p>";
+				markup += "<p>" + objArray[i].priority[0] + " " + objArray[i].priority[1] + "</p>";
+				markup += "<p>" + objArray[i].comments[0] + " " + objArray[i].comments[1] + "</p>";
 				markup += "</li>";
 			}
-		}
+		} else if (categoryName === "Start Date") {
 
+		} else if (categoryName === "End Date") {
+
+		} else {
+
+			// The object of items for this category.
+			for(var j = 0; j < numItems; j++) {
+				key = localStorage.key(j);
+				value = localStorage.getItem(key);
+				obj = $.parseJSON(value);
+
+				// Generate a list item for each item in the category
+				// and add it to our markup.
+				if(categoryName === obj.category[1]) {
+					markup += "<li><h1>" + obj.itemName[1] + "</h1>";
+					markup += "<p>" + obj.startDate[0] + " " + obj.startDate[1] + "</p>";
+					markup += "<p>" + obj.endDate[0] + " " + obj.endDate[1] + "</p>";
+					markup += "<p>" + obj.priority[0] + " " + obj.priority[1] + "</p>";
+					markup += "<p>" + obj.comments[0] + " " + obj.comments[1] + "</p>";
+					markup += "</li>";
+				}
+
+				if ((categoryName === "Highlighted Red") && (obj.highlighted[1] === "Yes")) {
+					if (obj.priority[1] === "3") {
+						markup += "<li><h1>" + obj.itemName[1] + "</h1>";
+						markup += "<p>" + obj.startDate[0] + " " + obj.startDate[1] + "</p>";
+						markup += "<p>" + obj.endDate[0] + " " + obj.endDate[1] + "</p>";
+						markup += "<p>" + obj.priority[0] + " " + obj.priority[1] + "</p>";
+						markup += "<p>" + obj.comments[0] + " " + obj.comments[1] + "</p>";
+						markup += "</li>";
+					}
+				}
+
+				if ((categoryName === "Highlighted Yellow") && (obj.highlighted[1] === "Yes")) {
+					if (obj.priority[1] === "2") {
+						markup += "<li><h1>" + obj.itemName[1] + "</h1>";
+						markup += "<p>" + obj.startDate[0] + " " + obj.startDate[1] + "</p>";
+						markup += "<p>" + obj.endDate[0] + " " + obj.endDate[1] + "</p>";
+						markup += "<p>" + obj.priority[0] + " " + obj.priority[1] + "</p>";
+						markup += "<p>" + obj.comments[0] + " " + obj.comments[1] + "</p>";
+						markup += "</li>";
+					}
+				}
+
+				if ((categoryName === "Highlighted Green") && (obj.highlighted[1] === "Yes")) {
+					if (obj.priority[1] === "1") {
+						markup += "<li><h1>" + obj.itemName[1] + "</h1>";
+						markup += "<p>" + obj.startDate[0] + " " + obj.startDate[1] + "</p>";
+						markup += "<p>" + obj.endDate[0] + " " + obj.endDate[1] + "</p>";
+						markup += "<p>" + obj.priority[0] + " " + obj.priority[1] + "</p>";
+						markup += "<p>" + obj.comments[0] + " " + obj.comments[1] + "</p>";
+						markup += "</li>";
+					}
+				}
+			}
+		}
+		console.log(categoryName);
 		markup += "</ul>";
 
-		
+
 
 		// Find the h1 element in our header and inject the name of
 		// the category into it.

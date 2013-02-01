@@ -51,8 +51,9 @@ window.addEventListener("DOMContentLoaded", function() {
 
 	function storeData(key) {
 		//if there is no key, make a new item. Else update current data
+		var id;
 		if(!key) {
-			var id = Math.floor(Math.random() * 1000000001);
+			id = Math.floor(Math.random() * 1000000001);
 		} else {
 			id = key;
 		}
@@ -300,13 +301,14 @@ window.addEventListener("DOMContentLoaded", function() {
 	function getSearch() {
 		var category = getID('searchCategory').value;
 		var term = getID('searchWord').value;
-		var len = localStorage.length;
+		var len = localStorage.length,
+			key, value, obj;
 		//Searching by Category Only
 		if(term === "") {
 			for(var i = 0; i < len; i++) {
-				var key = localStorage.key(i);
-				var value = localStorage.getItem(key);
-				var obj = JSON.parse(value);
+				key = localStorage.key(i);
+				value = localStorage.getItem(key);
+				obj = JSON.parse(value);
 
 				if(category === obj.category[1]) {
 					if(category === "Work") {
@@ -328,17 +330,14 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 
 		//Searching by Category and Term
-		if((category != "") && (term != "")) {
-			for(var i = 0; i < len; i++) {
-				key = localStorage.key(i);
+		if((category !== "") && (term !== "")) {
+			for(var j = 0; j < len; j++) {
+				key = localStorage.key(j);
 				value = localStorage.getItem(key);
 				obj = JSON.parse(value);
-				for(n in obj) {
+				for(var n in obj) {
 					if((term === obj[n][1]) && (category === obj.category[1])) {
 						$('ul').not('ul#mainList').not(':contains(' + term + ')').hide(300);
-						for(q in obj) {
-							console.log(obj[q][1]);
-						}
 					}
 				}
 			}
