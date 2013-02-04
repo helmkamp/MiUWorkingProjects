@@ -1,3 +1,6 @@
+// The base code was found on the jQuery Mobile Docs site
+// It was then edited to fit my needs
+
 // Load the data for a specific category, based on
 // the URL passed in. Generate markup for the items in the
 // category, inject it into an embedded page, and then make
@@ -112,7 +115,7 @@ function showCategory(urlObj, options) {
 				}
 			}
 		}
-		console.log(categoryName);
+		
 		markup += "</ul>";
 
 
@@ -145,7 +148,6 @@ function showCategory(urlObj, options) {
 		$.mobile.changePage($page, options);
 	}
 }
-
 
 // Listen for any attempts to call changePage().
 $(document).bind("pagebeforechange", function(e, data) {
