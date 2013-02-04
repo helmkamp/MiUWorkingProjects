@@ -49,24 +49,28 @@ form {
 	margin: auto;
 }
 
+#items {
+	width: 21em;
+}
+
 #highlightGreen {
-	color: black;
+	color: green;
 	text-shadow: 0 0 0 #444;
-	background-color: green;
+	/*background-color: green;*/
 	width: 21em;
 }
 
 #highlightYellow {
-	color: black;
+	color: yellow;
 	text-shadow: 0 0 0 #444;
-	background-color: yellow;
+	/*background-color: yellow;*/
 	width: 21em;
 }
 
 #highlightRed {
-	color: black;
+	color: red;
 	text-shadow: 0 0 0 #444;
-	background-color: red;
+	/*background-color: red;*/
 	width: 21em;
 }
 

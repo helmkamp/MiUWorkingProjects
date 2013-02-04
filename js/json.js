@@ -46,7 +46,7 @@ var json = {
     },
     "item6":{
         "startDate":["Start Date:", "2013-01-07"],
-        "endDate":["End Date:", "2013-01-010"],
+        "endDate":["End Date:", "2013-01-10"],
         "itemName":["Item Name:", "Reading Assignment"],
         "category":["Category:", "School"],
         "priority":["Priority:", "2"],
